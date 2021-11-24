@@ -12,23 +12,24 @@
           <div class="app-content__wrapper">
             <ul class="app-content__tasks">
               <li class="app-content__task task">
-                <input
-                  class="task__input"
-                  id="task-1"
-                  type="checkbox"
-                  checked
-                />
-                <label class="task__label" for="task-1">Task 1</label>
+                <label class="task__label"
+                  >Task 1
+                  <input class="task__input" type="checkbox" checked />
+                </label>
                 <button class="task__btn" aria-label="remove-task"></button>
               </li>
               <li class="app-content__task task">
-                <input class="task__input" id="task-2" type="checkbox" />
-                <label class="task__label" for="task-2">Task 2</label>
+                <label class="task__label"
+                  >Task 2
+                  <input class="task__input" type="checkbox" />
+                </label>
                 <button class="task__btn" aria-label="remove-task"></button>
               </li>
               <li class="app-content__task task">
-                <input class="task__input" id="task-3" type="checkbox" />
-                <label class="task__label" for="task-3">Task 3</label>
+                <label class="task__label">
+                  <input class="task__input" type="checkbox" />
+                  Task 3
+                </label>
                 <button class="task__btn" aria-label="remove-task"></button>
               </li>
             </ul>
@@ -43,36 +44,33 @@
           <div class="app-footer__wrapper">
             <p class="app-footer__count">1/3 left</p>
             <div class="app-footer__tabs app-tabs">
-              <input
-                class="app-tabs__input app-tabs__input--one"
-                id="all"
-                type="radio"
-                name="tab"
-                checked
-              />
-              <input
-                class="app-tabs__input app-tabs__input--two"
-                id="active"
-                type="radio"
-                name="tab"
-              />
-              <input
-                class="app-tabs__input app-tabs__input--three"
-                id="completed"
-                type="radio"
-                name="tab"
-              />
-              <label class="app-tabs__label app-tabs__label--one" for="all"
-                >All</label
-              >
-              <label class="app-tabs__label app-tabs__label--two" for="active"
-                >Active</label
-              >
+              <label class="app-tabs__label app-tabs__label_one"
+                >All
+                <input
+                  class="app-tabs__input app-tabs__input_one"
+                  type="radio"
+                  name="tab"
+                  checked
+                />
+              </label>
+              <label class="app-tabs__label app-tabs__label_two" for="active"
+                >Active
+                <input
+                  class="app-tabs__input app-tabs__input_two"
+                  type="radio"
+                  name="tab"
+                />
+              </label>
               <label
-                class="app-tabs__label app-tabs__label--three"
+                class="app-tabs__label app-tabs__label_three"
                 for="completed"
-                >Completed</label
-              >
+                >Completed
+                <input
+                  class="app-tabs__input app-tabs__input_three"
+                  type="radio"
+                  name="tab"
+                />
+              </label>
             </div>
           </div>
         </footer>
@@ -170,6 +168,22 @@ export default {
                   outline: none;
                   .task__input:checked & {
                     background-color: $rajah;
+                  }
+                }
+                &::after {
+                  content: "";
+                  display: block;
+                  width: 1.5rem;
+                  height: 1.5rem;
+                  background: url("./assets/img/vector.png") center no-repeat;
+                  opacity: 0;
+                  position: absolute;
+                  left: 0;
+                  top: 50%;
+                  transform: translateY(-50%);
+                  transition: opacity 0.5s ease;
+                  .task__input:checked & {
+                    opacity: 1;
                   }
                 }
               }
@@ -274,9 +288,9 @@ export default {
               &__input {
                 appearance: none;
                 position: absolute;
-                &--one:checked ~ .app-tabs__label--one,
-                &--two:checked ~ .app-tabs__label--two,
-                &--three:checked ~ .app-tabs__label--three {
+                &--one:checked ~ .app-tabs__label_one,
+                &--two:checked ~ .app-tabs__label_two,
+                &--three:checked ~ .app-tabs__label_three {
                   border-color: $twine;
                   color: $twine;
                 }
