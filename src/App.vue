@@ -12,23 +12,26 @@
           <div class="app-content__wrapper">
             <ul class="app-content__tasks">
               <li class="app-content__task task">
-                <label class="task__label"
-                  >Task 1
-                  <input class="task__input" type="checkbox" checked />
-                </label>
-                <button class="task__btn" aria-label="remove-task"></button>
-              </li>
-              <li class="app-content__task task">
-                <label class="task__label"
-                  >Task 2
-                  <input class="task__input" type="checkbox" />
+                <label class="task__label">
+                  <input type="checkbox" class="task__input" />
+                  <span class="task__fake"></span>
+                  <span class="task__text">Task 1</span>
                 </label>
                 <button class="task__btn" aria-label="remove-task"></button>
               </li>
               <li class="app-content__task task">
                 <label class="task__label">
-                  <input class="task__input" type="checkbox" />
-                  Task 3
+                  <input type="checkbox" class="task__input" />
+                  <span class="task__fake"></span>
+                  <span class="task__text">Task 2</span>
+                </label>
+                <button class="task__btn" aria-label="remove-task"></button>
+              </li>
+              <li class="app-content__task task">
+                <label class="task__label">
+                  <input type="checkbox" class="task__input" />
+                  <span class="task__fake"></span>
+                  <span class="task__text">Task 3</span>
                 </label>
                 <button class="task__btn" aria-label="remove-task"></button>
               </li>
@@ -44,32 +47,33 @@
           <div class="app-footer__wrapper">
             <p class="app-footer__count">1/3 left</p>
             <div class="app-footer__tabs app-tabs">
-              <label class="app-tabs__label app-tabs__label_one"
-                >All
+              <label class="app-tabs__label app-tabs__label_one">
                 <input
                   class="app-tabs__input app-tabs__input_one"
                   type="radio"
                   name="tab"
                   checked
                 />
+                <span>All</span>
               </label>
-              <label class="app-tabs__label app-tabs__label_two" for="active"
-                >Active
+              <label class="app-tabs__label app-tabs__label_two" for="active">
                 <input
                   class="app-tabs__input app-tabs__input_two"
                   type="radio"
                   name="tab"
                 />
+                <span>Active</span>
               </label>
               <label
                 class="app-tabs__label app-tabs__label_three"
                 for="completed"
-                >Completed
+              >
                 <input
                   class="app-tabs__input app-tabs__input_three"
                   type="radio"
                   name="tab"
                 />
+                <span>Completed</span>
               </label>
             </div>
           </div>
@@ -136,56 +140,30 @@ export default {
               background: $karry;
               border-radius: 0.625rem;
               &__input {
-                appearance: none;
-                &:checked + .task__label::before {
-                  background-color: $rajah;
-                }
-                &:checked + .task__label::after {
-                  opacity: 1;
-                }
+                display: none;
               }
-              &__label {
-                flex: 1 1 auto;
-                padding-left: 3rem;
-                padding-right: 1rem;
-                font-family: "Inter", sans-serif;
-                font-size: 1.25rem;
-                line-height: 1.75rem;
+              &__fake {
+                display: inline-block;
+                width: 20px;
+                height: 20px;
+                border: 1px solid black;
                 position: relative;
-                cursor: pointer;
                 &::before {
                   content: "";
-                  display: block;
-                  width: 1.5rem;
-                  height: 1.5rem;
-                  border: 0.125rem solid $rajah;
-                  border-radius: 0.25rem;
                   position: absolute;
-                  left: 0;
-                  top: 50%;
-                  transform: translateY(-50%);
-                  transition: background-color 0.5s ease;
-                  outline: none;
-                  .task__input:checked & {
-                    background-color: $rajah;
-                  }
-                }
-                &::after {
-                  content: "";
                   display: block;
-                  width: 1.5rem;
-                  height: 1.5rem;
-                  background: url("./assets/img/vector.png") center no-repeat;
+                  width: 20px;
+                  height: 20px;
+                  background-color: black;
+                  top: 50%;
+                  left: 50%;
+                  transform: translate(-50%, -50%);
                   opacity: 0;
-                  position: absolute;
-                  left: 0;
-                  top: 50%;
-                  transform: translateY(-50%);
-                  transition: opacity 0.5s ease;
-                  .task__input:checked & {
-                    opacity: 1;
-                  }
+                  transition: 0.2s;
+                  z-index: 3;
                 }
+              }
+              &__text {
               }
               &__btn {
                 display: flex;
@@ -232,6 +210,9 @@ export default {
                   background-color: $peachOrange;
                   transition: background-color 0.5s;
                 }
+              }
+              &__input:checked + &__fake:before {
+                opacity: 1;
               }
             }
           }
@@ -288,9 +269,9 @@ export default {
               &__input {
                 appearance: none;
                 position: absolute;
-                &--one:checked ~ .app-tabs__label_one,
-                &--two:checked ~ .app-tabs__label_two,
-                &--three:checked ~ .app-tabs__label_three {
+                &_one:checked ~ .app-tabs__label_one,
+                &_two:checked ~ .app-tabs__label_two,
+                &_three:checked ~ .app-tabs__label_three {
                   border-color: $twine;
                   color: $twine;
                 }
