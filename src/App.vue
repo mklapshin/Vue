@@ -144,17 +144,20 @@ export default {
               }
               &__fake {
                 display: inline-block;
-                width: 20px;
-                height: 20px;
-                border: 1px solid black;
+                width: 24px;
+                height: 24px;
+                border: 1.5px solid #feb567;
+                border-radius: 5px;
                 position: relative;
                 &::before {
                   content: "";
                   position: absolute;
                   display: block;
-                  width: 20px;
-                  height: 20px;
-                  background-color: black;
+                  width: 24px;
+                  height: 24px;
+                  background-color: orange;
+                  background: url("./assets/img/vector.png") center right
+                    no-repeat;
                   top: 50%;
                   left: 50%;
                   transform: translate(-50%, -50%);
@@ -163,11 +166,13 @@ export default {
                   z-index: 3;
                 }
               }
+              .task__input:checked + .task__fake::before {
+                opacity: 1;
+              }
               &__text {
               }
               &__btn {
-                display: flex;
-                flex-shrink: 0;
+                margin: 0 0 0 310px;
                 justify-content: center;
                 align-items: center;
                 width: 1.5rem;
@@ -210,9 +215,6 @@ export default {
                   background-color: $peachOrange;
                   transition: background-color 0.5s;
                 }
-              }
-              &__input:checked + &__fake:before {
-                opacity: 1;
               }
             }
           }
