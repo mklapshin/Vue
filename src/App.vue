@@ -182,15 +182,16 @@ export default {
                 cursor: pointer;
               }
               &__label {
-                width: 400px;
+                width: 370px;
               }
               &__text {
                 margin: -20px 0 0 50px;
                 width: 340px;
               }
               &__btn {
+                flex: 0 0 1.5rem;
                 cursor: pointer;
-                margin: 0 0 0 20px;
+                margin: 0 0 0 50px;
                 justify-content: center;
                 align-items: center;
                 width: 1.5rem;
@@ -201,6 +202,9 @@ export default {
                 cursor: pointer;
                 transition: border-color 0.5s;
                 position: relative;
+                @include breakpoint($sm) {
+                  margin: 0;
+                }
                 &:hover {
                   border-color: $carrotOrange;
                   &::after {
