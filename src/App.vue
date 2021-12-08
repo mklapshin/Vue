@@ -15,7 +15,15 @@
                 <label class="task__label">
                   <input type="checkbox" class="task__input" />
                   <span class="task__fake"></span>
-                  <span class="task__text">Task 1</span>
+                  <div class="task__text">
+                    Task 1 Lorem ipsum dolor sit amet consectetur adipisicing
+                    elit. Est quibusdam excepturi quidem voluptate maxime optio
+                    ex molestias quod quia consequuntur, modi tenetur, culpa
+                    commodi animi, laudantium dolor non rem id praesentium quos?
+                    Libero, ipsum vitae, cupiditate suscipit facere illo
+                    asperiores, alias dolore et natus quaerat odio aspernatur
+                    quae. Tenetur, eum!
+                  </div>
                 </label>
                 <button class="task__btn" aria-label="remove-task"></button>
               </li>
@@ -23,7 +31,7 @@
                 <label class="task__label">
                   <input type="checkbox" class="task__input" />
                   <span class="task__fake"></span>
-                  <span class="task__text">Task 2</span>
+                  <div class="task__text">Task 2</div>
                 </label>
                 <button class="task__btn" aria-label="remove-task"></button>
               </li>
@@ -31,7 +39,7 @@
                 <label class="task__label">
                   <input type="checkbox" class="task__input" />
                   <span class="task__fake"></span>
-                  <span class="task__text">Task 3</span>
+                  <div class="task__text">Task 3</div>
                 </label>
                 <button class="task__btn" aria-label="remove-task"></button>
               </li>
@@ -139,10 +147,12 @@ export default {
               align-items: center;
               background: $karry;
               border-radius: 0.625rem;
+
               &__input {
                 display: none;
               }
               &__fake {
+                cursor: pointer;
                 display: inline-block;
                 width: 24px;
                 height: 24px;
@@ -150,6 +160,7 @@ export default {
                 border-radius: 5px;
                 position: relative;
                 &::before {
+                  cursor: pointer;
                   content: "";
                   position: absolute;
                   display: block;
@@ -168,11 +179,18 @@ export default {
               }
               .task__input:checked + .task__fake::before {
                 opacity: 1;
+                cursor: pointer;
+              }
+              &__label {
+                width: 400px;
               }
               &__text {
+                margin: -20px 0 0 50px;
+                width: 340px;
               }
               &__btn {
-                margin: 0 0 0 310px;
+                cursor: pointer;
+                margin: 0 0 0 20px;
                 justify-content: center;
                 align-items: center;
                 width: 1.5rem;
