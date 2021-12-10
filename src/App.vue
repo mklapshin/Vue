@@ -62,7 +62,7 @@
                   name="tab"
                   checked
                 />
-                <span class="app-tabs__fake"></span>
+                <span class="app-tabs__fake app-tabs__fake-one"></span>
                 <span>All</span>
               </label>
               <label class="app-tabs__label app-tabs__label_one">
@@ -72,7 +72,7 @@
                   name="tab"
                   checked
                 />
-                <span class="app-tabs__fake"></span>
+                <span class="app-tabs__fake app-tabs__fake-two"></span>
                 <span>Active</span>
               </label>
               <label class="app-tabs__label app-tabs__label_one">
@@ -82,7 +82,7 @@
                   name="tab"
                   checked
                 />
-                <span class="app-tabs__fake"></span>
+                <span class="app-tabs__fake app-tabs__fake-three"></span>
                 <span>Completed</span>
               </label>
             </div>
@@ -364,7 +364,7 @@ export default {
         &__fake {
           cursor: pointer;
           display: inline-block;
-          width: 74px;
+          width: 34px;
           height: 14px;
 
           border-radius: 5px;
@@ -375,9 +375,10 @@ export default {
             position: absolute;
             display: block;
             width: 94px;
-            height: 24px;
-            margin: 0 0 0 70px;
-            border: 4px solid #feb567;
+            height: 34px;
+            border-radius: 0.7rem;
+            margin: 0 0 0 3rem;
+            border: 0.2rem solid #feb567;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
@@ -386,6 +387,28 @@ export default {
             z-index: 3;
           }
         }
+
+        &__fake-one {
+          &::before {
+            width: 2.8rem;
+            margin: 0 0 0 1.7rem;
+          }
+        }
+
+        &__fake-two {
+          &::before {
+            width: 3.8rem;
+            margin: 0 0 0 2.3rem;
+          }
+        }
+
+        &__fake-three {
+          &::before {
+            width: 5.8rem;
+            margin: 0 0 0 3.5rem;
+          }
+        }
+
         .app-tabs__input:checked + .app-tabs__fake::before {
           opacity: 1;
           cursor: pointer;
