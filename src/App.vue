@@ -104,12 +104,24 @@ export default {
   .page-wrapper {
     height: 100vh;
     display: flex;
+    min-width: 15rem;
     justify-content: center;
     align-items: center;
     background: url("./assets/img/list.png") center right no-repeat;
     @include breakpoint($md) {
       background: none;
     }
+    @include breakpoint($ssm) {
+      padding: 0 0 0 4rem;
+      margin: 0;
+      justify-content: center;
+    }
+    @include breakpoint($sssm) {
+      padding: 0 0 0 7rem;
+      margin: 0;
+      justify-content: center;
+    }
+
     .todo-app {
       width: 33.75rem;
       display: flex;
@@ -205,6 +217,9 @@ export default {
                 @include breakpoint($sm) {
                   margin: 0;
                 }
+                @include breakpoint($ssm) {
+                  margin: 0;
+                }
                 &:hover {
                   border-color: $carrotOrange;
                   &::after {
@@ -276,6 +291,9 @@ export default {
             @include breakpoint($sm) {
               justify-content: center;
             }
+            @include breakpoint($ssm) {
+              justify-content: center;
+            }
           }
           &__count {
             margin-right: 1rem;
@@ -283,6 +301,11 @@ export default {
             line-height: 1.75rem;
             color: $twineOpacity;
             @include breakpoint($sm) {
+              width: 100%;
+              text-align: center;
+              margin-bottom: 1rem;
+            }
+            @include breakpoint($ssm) {
               width: 100%;
               text-align: center;
               margin-bottom: 1rem;
@@ -301,6 +324,18 @@ export default {
                 }
               }
               &__label {
+                cursor: pointer;
+                border: 0.125rem solid $peachOrange;
+                border-radius: 0.25rem;
+                &:hover {
+                  border-color: $carrotOrange;
+                  &::after {
+                    background-color: $carrotOrange;
+                  }
+                  &::before {
+                    background-color: $carrotOrange;
+                  }
+                }
                 padding: 0.25rem 0.625rem;
                 font-size: 1.25rem;
                 line-height: 1.75rem;
@@ -313,6 +348,9 @@ export default {
                 &:not(:last-child) {
                   margin-right: 1.5rem;
                   @include breakpoint($sm) {
+                    margin-right: 0.75rem;
+                  }
+                  @include breakpoint($ssm) {
                     margin-right: 0.75rem;
                   }
                 }
