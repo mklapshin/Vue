@@ -62,25 +62,27 @@
                   name="tab"
                   checked
                 />
+                <span class="app-tabs__fake"></span>
                 <span>All</span>
               </label>
-              <label class="app-tabs__label app-tabs__label_two" for="active">
+              <label class="app-tabs__label app-tabs__label_one">
                 <input
-                  class="app-tabs__input app-tabs__input_two"
+                  class="app-tabs__input app-tabs__input_one"
                   type="radio"
                   name="tab"
+                  checked
                 />
+                <span class="app-tabs__fake"></span>
                 <span>Active</span>
               </label>
-              <label
-                class="app-tabs__label app-tabs__label_three"
-                for="completed"
-              >
+              <label class="app-tabs__label app-tabs__label_one">
                 <input
-                  class="app-tabs__input app-tabs__input_three"
+                  class="app-tabs__input app-tabs__input_one"
                   type="radio"
                   name="tab"
+                  checked
                 />
+                <span class="app-tabs__fake"></span>
                 <span>Completed</span>
               </label>
             </div>
@@ -118,6 +120,12 @@ export default {
     }
     @include breakpoint($sssm) {
       padding: 0 0 0 7rem;
+      margin: 0;
+      justify-content: center;
+    }
+
+    @include breakpoint($ssssm) {
+      padding: 0 0 0 9.5rem;
       margin: 0;
       justify-content: center;
     }
@@ -312,51 +320,75 @@ export default {
             }
           }
           &__tabs {
-            .app-tabs {
-              &__input {
-                appearance: none;
-                position: absolute;
-                &_one:checked ~ .app-tabs__label_one,
-                &_two:checked ~ .app-tabs__label_two,
-                &_three:checked ~ .app-tabs__label_three {
-                  border-color: $twine;
-                  color: $twine;
+            &__label {
+              cursor: pointer;
+              border: 0.125rem solid $peachOrange;
+              border-radius: 0.25rem;
+              &:hover {
+                border-color: $carrotOrange;
+                &::after {
+                  background-color: $carrotOrange;
+                }
+                &::before {
+                  background-color: $carrotOrange;
                 }
               }
-              &__label {
-                cursor: pointer;
-                border: 0.125rem solid $peachOrange;
-                border-radius: 0.25rem;
-                &:hover {
-                  border-color: $carrotOrange;
-                  &::after {
-                    background-color: $carrotOrange;
-                  }
-                  &::before {
-                    background-color: $carrotOrange;
-                  }
+              padding: 0.25rem 0.625rem;
+              font-size: 1.25rem;
+              line-height: 1.75rem;
+              color: $twineOpacity;
+              background-color: transparent;
+              border: 0.125rem solid transparent;
+              border-radius: 0.625rem;
+              cursor: pointer;
+              transition: border-color 0.5s, color 0.5s;
+              &:not(:last-child) {
+                margin-right: 1.5rem;
+                @include breakpoint($sm) {
+                  margin-right: 0.75rem;
                 }
-                padding: 0.25rem 0.625rem;
-                font-size: 1.25rem;
-                line-height: 1.75rem;
-                color: $twineOpacity;
-                background-color: transparent;
-                border: 0.125rem solid transparent;
-                border-radius: 0.625rem;
-                cursor: pointer;
-                transition: border-color 0.5s, color 0.5s;
-                &:not(:last-child) {
-                  margin-right: 1.5rem;
-                  @include breakpoint($sm) {
-                    margin-right: 0.75rem;
-                  }
-                  @include breakpoint($ssm) {
-                    margin-right: 0.75rem;
-                  }
+                @include breakpoint($ssm) {
+                  margin-right: 0.75rem;
                 }
               }
             }
           }
+        }
+      }
+
+      .app-tabs {
+        &__input {
+          display: none;
+        }
+
+        &__fake {
+          cursor: pointer;
+          display: inline-block;
+          width: 74px;
+          height: 14px;
+
+          border-radius: 5px;
+          position: relative;
+          &::before {
+            cursor: pointer;
+            content: "";
+            position: absolute;
+            display: block;
+            width: 94px;
+            height: 24px;
+            margin: 0 0 0 70px;
+            border: 4px solid #feb567;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: 0.2s;
+            z-index: 3;
+          }
+        }
+        .app-tabs__input:checked + .app-tabs__fake::before {
+          opacity: 1;
+          cursor: pointer;
         }
       }
     }
