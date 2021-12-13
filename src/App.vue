@@ -18,11 +18,9 @@
                   <div class="task__text">
                     Task 1 Lorem ipsum dolor sit amet consectetur adipisicing
                     elit. Est quibusdam excepturi quidem voluptate maxime optio
-                    ex molestias quod quia consequuntur, modi tenetur, culpa
-                    commodi animi, laudantium dolor non rem id praesentium quos?
-                    Libero, ipsum vitae, cupiditate suscipit facere illo
-                    asperiores, alias dolore et natus quaerat odio aspernatur
-                    quae. Tenetur, eum!
+                    ex molestias quod Lorem ipsum dolor, sit amet consectetur
+                    adipisicing elit. Fugiat praesentium alias quo debitis
+                    architecto porro animi quam sunt cumque delectus!
                   </div>
                 </label>
                 <button class="task__btn" aria-label="remove-task"></button>
@@ -119,21 +117,27 @@ export default {
       justify-content: center;
     }
     @include breakpoint($sssm) {
-      padding: 0 0 0 7rem;
+      padding: 0 0 0 0;
       margin: 0;
       justify-content: center;
     }
 
     @include breakpoint($ssssm) {
-      padding: 0 0 0 9.5rem;
+      padding: 0 0 0 0;
       margin: 0;
       justify-content: center;
     }
 
     .todo-app {
-      width: 33.75rem;
+      max-width: 33.75rem;
       display: flex;
       flex-direction: column;
+      @include breakpoint($sm) {
+        max-width: 20rem;
+      }
+      @include breakpoint($sssm) {
+        max-width: 17rem;
+      }
       &__header {
         background-color: $peachOrange;
       }
@@ -206,7 +210,7 @@ export default {
               }
               &__text {
                 margin: -20px 0 0 50px;
-                width: 340px;
+                max-width: 20rem;
               }
               &__btn {
                 flex: 0 0 1.5rem;
@@ -369,12 +373,16 @@ export default {
 
           border-radius: 5px;
           position: relative;
+          @include breakpoint($ssm) {
+            width: 9px;
+          }
+
           &::before {
             cursor: pointer;
             content: "";
             position: absolute;
             display: block;
-            width: 94px;
+            width: 14px;
             height: 34px;
             border-radius: 0.7rem;
             margin: 0 0 0 3rem;
