@@ -6,22 +6,13 @@
           <p class="todo-app__title">to do list</p>
         </header>
         <main class="todo-app__content app-content">
-          <h1 class="app-content__title visually-hidden">
-            Application to-do list
-          </h1>
           <div class="app-content__wrapper">
             <ul class="app-content__tasks">
               <li class="app-content__task task">
                 <label class="task__label">
                   <input type="checkbox" class="task__input" />
                   <span class="task__fake"></span>
-                  <div class="task__text">
-                    Task 1 Lorem ipsum dolor sit amet consectetur adipisicing
-                    elit. Est quibusdam excepturi quidem voluptate maxime optio
-                    ex molestias quod Lorem ipsum dolor, sit amet consectetur
-                    adipisicing elit. Fugiat praesentium alias quo debitis
-                    architecto porro animi quam sunt cumque delectus!
-                  </div>
+                  <div class="task__text">Task 1 Lorem ipsum Lorem</div>
                 </label>
                 <button class="task__btn" aria-label="remove-task"></button>
               </li>
@@ -29,7 +20,7 @@
                 <label class="task__label">
                   <input type="checkbox" class="task__input" />
                   <span class="task__fake"></span>
-                  <div class="task__text">Task 2</div>
+                  <div class="task__text">Task 2 lorem</div>
                 </label>
                 <button class="task__btn" aria-label="remove-task"></button>
               </li>
@@ -60,8 +51,7 @@
                   name="tab"
                   checked
                 />
-                <span class="app-tabs__fake app-tabs__fake-one"></span>
-                <span>All</span>
+                <span class="app-tabs__fake">All</span>
               </label>
               <label class="app-tabs__label app-tabs__label_one">
                 <input
@@ -70,8 +60,7 @@
                   name="tab"
                   checked
                 />
-                <span class="app-tabs__fake app-tabs__fake-two"></span>
-                <span>Active</span>
+                <span class="app-tabs__fake">Active</span>
               </label>
               <label class="app-tabs__label app-tabs__label_one">
                 <input
@@ -80,8 +69,7 @@
                   name="tab"
                   checked
                 />
-                <span class="app-tabs__fake app-tabs__fake-three"></span>
-                <span>Completed</span>
+                <span class="app-tabs__fake">Completed</span>
               </label>
             </div>
           </div>
@@ -104,14 +92,13 @@ export default {
   .page-wrapper {
     height: 100vh;
     display: flex;
-    min-width: 15rem;
     justify-content: center;
     align-items: center;
     background: url("./assets/img/list.png") center right no-repeat;
     @include breakpoint($md) {
       background: none;
     }
-    @include breakpoint($ssm) {
+    /* @include breakpoint($ssm) {
       padding: 0 0 0 4rem;
       margin: 0;
       justify-content: center;
@@ -127,17 +114,17 @@ export default {
       margin: 0;
       justify-content: center;
     }
-
+*/
     .todo-app {
       max-width: 33.75rem;
-      display: flex;
-      flex-direction: column;
-      @include breakpoint($sm) {
+
+      /* @include breakpoint($sm) {
         max-width: 20rem;
       }
       @include breakpoint($sssm) {
         max-width: 17rem;
       }
+      */
       &__header {
         background-color: $peachOrange;
       }
@@ -150,14 +137,9 @@ export default {
         line-height: 1.75rem;
       }
       &__content {
-        padding-top: 1.875rem;
-        padding-bottom: 1.875rem;
-        flex: 1 1 auto;
+        padding: 1.875rem 0;
         background-color: $linen;
         .app-content {
-          &__title {
-            @include visually-hidden;
-          }
           &__wrapper {
             padding: 0 1.875rem;
           }
@@ -176,20 +158,22 @@ export default {
                 display: none;
               }
               &__fake {
+                flex: 0 0 1.5rem;
                 cursor: pointer;
                 display: inline-block;
-                width: 24px;
-                height: 24px;
-                border: 1.5px solid #feb567;
-                border-radius: 5px;
+                width: 1.5rem;
+                height: 1.5rem;
+                border: 1.5px solid $rajah;
+                border-radius: 0.25rem;
                 position: relative;
                 &::before {
+                  flex: 0 0 1.5rem;
                   cursor: pointer;
                   content: "";
                   position: absolute;
                   display: block;
-                  width: 24px;
-                  height: 24px;
+                  width: 1.5rem;
+                  height: 1.5rem;
                   background-color: orange;
                   background: url("./assets/img/vector.png") center right
                     no-repeat;
@@ -206,11 +190,14 @@ export default {
                 cursor: pointer;
               }
               &__label {
-                width: 370px;
+                // width: 370px;
+                flex: 1 1 auto;
+                display: flex;
+                align-items: center;
               }
               &__text {
-                margin: -20px 0 0 50px;
-                max-width: 20rem;
+                margin: 0 0 0 24px;
+                // max-width: 20rem;
               }
               &__btn {
                 flex: 0 0 1.5rem;
@@ -229,9 +216,7 @@ export default {
                 @include breakpoint($sm) {
                   margin: 0;
                 }
-                @include breakpoint($ssm) {
-                  margin: 0;
-                }
+
                 &:hover {
                   border-color: $carrotOrange;
                   &::after {
@@ -297,31 +282,25 @@ export default {
             padding: 0.75rem 1.875rem;
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
             background-color: $peachOrange;
-            @include breakpoint($sm) {
+            /* @include breakpoint($sm) {
               justify-content: center;
             }
-            @include breakpoint($ssm) {
-              justify-content: center;
-            }
+            */
           }
           &__count {
             margin-right: 1rem;
             font-size: 1.25rem;
             line-height: 1.75rem;
             color: $twineOpacity;
-            @include breakpoint($sm) {
+            /* @include breakpoint($sm) {
               width: 100%;
               text-align: center;
               margin-bottom: 1rem;
             }
-            @include breakpoint($ssm) {
-              width: 100%;
-              text-align: center;
-              margin-bottom: 1rem;
-            }
+            */
           }
           &__tabs {
             &__label {
@@ -338,6 +317,7 @@ export default {
                 }
               }
               padding: 0.25rem 0.625rem;
+
               font-size: 1.25rem;
               line-height: 1.75rem;
               color: $twineOpacity;
@@ -348,12 +328,10 @@ export default {
               transition: border-color 0.5s, color 0.5s;
               &:not(:last-child) {
                 margin-right: 1.5rem;
-                @include breakpoint($sm) {
+                /* @include breakpoint($sm) {
                   margin-right: 0.75rem;
                 }
-                @include breakpoint($ssm) {
-                  margin-right: 0.75rem;
-                }
+              */
               }
             }
           }
@@ -368,52 +346,29 @@ export default {
         &__fake {
           cursor: pointer;
           display: inline-block;
-          width: 34px;
-          height: 14px;
-
-          border-radius: 5px;
+          width: 5.3rem;
+          height: 0.875rem;
+          margin: 0 0.2rem 0 0;
+          text-align: center;
+          border-radius: 0.25rem;
           position: relative;
-          @include breakpoint($ssm) {
-            width: 9px;
-          }
 
           &::before {
             cursor: pointer;
             content: "";
             position: absolute;
             display: block;
-            width: 14px;
-            height: 34px;
+            width: 5.7rem;
+            margin: 0 0 0 0.3rem;
+            height: 2rem;
             border-radius: 0.7rem;
-            margin: 0 0 0 3rem;
-            border: 0.2rem solid #feb567;
+            border: 0.2rem solid $rajah;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
             opacity: 0;
             transition: 0.2s;
             z-index: 3;
-          }
-        }
-
-        &__fake-one {
-          &::before {
-            width: 2.8rem;
-            margin: 0 0 0 1.7rem;
-          }
-        }
-
-        &__fake-two {
-          &::before {
-            width: 3.8rem;
-            margin: 0 0 0 2.3rem;
-          }
-        }
-
-        &__fake-three {
-          &::before {
-            width: 5.8rem;
-            margin: 0 0 0 3.5rem;
           }
         }
 
