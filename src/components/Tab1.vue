@@ -1,58 +1,19 @@
 <template>
-  <footer class="todo-app__footer app-footer">
-    <div class="app-footer__wrapper">
-      <p class="app-footer__count">1/3 left</p>
-      <div class="app-footer__tabs app-tabs">
-        <label class="app-tabs__label app-tabs__label_one">
-          <input
-            class="app-tabs__input app-tabs__input_one"
-            type="radio"
-            name="tab"
-            checked
-          />
-          <span class="app-tabs__fake">All</span>
-        </label>
-        <label class="app-tabs__label app-tabs__label_one">
-          <input
-            class="app-tabs__input app-tabs__input_one"
-            type="radio"
-            name="tab"
-            checked
-          />
-          <span class="app-tabs__fake">Active</span>
-        </label>
-        <label class="app-tabs__label app-tabs__label_one">
-          <input
-            class="app-tabs__input app-tabs__input_one"
-            type="radio"
-            name="tab"
-            checked
-          />
-          <span class="app-tabs__fake">Completed</span>
-        </label>
-      </div>
-    </div>
-  </footer>
+  <label class="app-tabs__label app-tabs__label_one">
+    <input
+      class="app-tabs__input app-tabs__input_one"
+      type="radio"
+      name="tab"
+      checked
+    />
+    <span class="app-tabs__fake">All</span>
+  </label>
 </template>
 
 <style lang="scss">
 @import "../assets/scss/main.scss";
 .todo-app__footer {
   .app-footer {
-    &__wrapper {
-      padding: 0.75rem 1.875rem;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-      background-color: $peachOrange;
-    }
-    &__count {
-      margin-right: 1rem;
-      font-size: 1.25rem;
-      line-height: 1.75rem;
-      color: $twineOpacity;
-    }
     &__tabs {
       &__label {
         cursor: pointer;

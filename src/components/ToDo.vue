@@ -2,25 +2,25 @@
   <div class="page-container">
     <div class="page-wrapper">
       <div class="todo-app">
-        <ToDoHeader />
-        <ToDoMain />
-        <ToDoFooter />
+        <Header />
+        <Main />
+        <Footer />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import ToDoHeader from "./ToDoHeader.vue";
-import ToDoMain from "./ToDoMain.vue";
-import ToDoFooter from "./ToDoFooter.vue";
+import Header from "./Header.vue";
+import Main from "./Main.vue";
+import Footer from "./Footer.vue";
 
 export default {
   name: "App",
   components: {
-    ToDoHeader,
-    ToDoMain,
-    ToDoFooter,
+    Header,
+    Main,
+    Footer,
   },
 };
 </script>
