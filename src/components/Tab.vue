@@ -6,9 +6,17 @@
       name="tab"
       checked
     />
-    <span class="app-tabs__fake">All</span>
+    <span class="app-tabs__fake">{{ tabText }}</span>
   </label>
 </template>
+
+<script>
+export default {
+  props: {
+    tabText: String,
+  },
+};
+</script>
 
 <style lang="scss">
 @import "../assets/scss/main.scss";
@@ -85,4 +93,3 @@
   }
 }
 </style>
- 

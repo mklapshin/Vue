@@ -1,22 +1,33 @@
 <template>
   <div class="app-footer__tabs app-tabs">
-    <Tab1 />
-    <Tab2 />
-    <Tab3 />
+    <Tab v-for="tab in tabs" :key="tab.id" :tabText="tab.text" />
   </div>
 </template>
 
 <script>
-import Tab1 from "./Tab1.vue";
-import Tab2 from "./Tab2.vue";
-import Tab3 from "./Tab3.vue";
+import Tab from "./Tab.vue";
 
 export default {
-  name: "App",
+  data() {
+    return {
+      tabs: [
+        {
+          text: "All",
+          id: 1,
+        },
+        {
+          text: "Active",
+          id: 2,
+        },
+        {
+          text: "Completed",
+          id: 3,
+        },
+      ],
+    };
+  },
   components: {
-    Tab1,
-    Tab2,
-    Tab3,
+    Tab,
   },
 };
 </script>

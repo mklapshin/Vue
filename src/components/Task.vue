@@ -9,6 +9,14 @@
   </li>
 </template>
 
+<script>
+export default {
+  props: {
+    taskText: String,
+  },
+};
+</script>
+
 <style lang="scss">
 @import "../assets/scss/main.scss";
 .task {
@@ -54,14 +62,12 @@
     cursor: pointer;
   }
   &__label {
-    // width: 370px;
     flex: 1 1 auto;
     display: flex;
     align-items: center;
   }
   &__text {
     margin: 0 0 0 24px;
-    // max-width: 20rem;
   }
   &__btn {
     flex: 0 0 1.5rem;
@@ -116,13 +122,3 @@
   }
 }
 </style>
-
-
-
-<script>
-export default {
-  props: {
-    taskText: String,
-  },
-};
-</script>

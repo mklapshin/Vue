@@ -14,14 +14,17 @@ export default {
         {
           text: "Task1",
           id: 1,
+          isChecked: false,
         },
         {
           text: "Task2",
           id: 2,
+          isChecked: false,
         },
         {
           text: "Task3",
           id: 3,
+          isChecked: false,
         },
       ],
     };
