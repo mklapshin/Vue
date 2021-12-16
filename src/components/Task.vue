@@ -3,7 +3,7 @@
     <label class="task__label">
       <input type="checkbox" class="task__input" />
       <span class="task__fake"></span>
-      <div class="task__text">Task 2 lorem</div>
+      <div class="task__text">{{ taskText }}</div>
     </label>
     <button class="task__btn" aria-label="remove-task"></button>
   </li>
@@ -116,3 +116,13 @@
   }
 }
 </style>
+
+
+
+<script>
+export default {
+  props: {
+    taskText: String,
+  },
+};
+</script>

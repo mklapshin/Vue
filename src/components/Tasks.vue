@@ -1,22 +1,33 @@
 <template>
   <ul class="app-content__tasks">
-    <Task1 />
-    <Task2 />
-    <Task3 />
+    <Task v-for="task in tasks" :key="task.id" :taskText="task.text" />
   </ul>
 </template>
 
 <script>
-import Task1 from "./Task1.vue";
-import Task2 from "./Task2.vue";
-import Task3 from "./Task3.vue";
+import Task from "./Task.vue";
 
 export default {
-  name: "App",
+  data() {
+    return {
+      tasks: [
+        {
+          text: "Task1",
+          id: 1,
+        },
+        {
+          text: "Task2",
+          id: 2,
+        },
+        {
+          text: "Task3",
+          id: 3,
+        },
+      ],
+    };
+  },
   components: {
-    Task1,
-    Task2,
-    Task3,
+    Task,
   },
 };
 </script>
