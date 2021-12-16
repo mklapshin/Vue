@@ -1,6 +1,11 @@
 <template>
   <ul class="app-content__tasks">
-    <Task v-for="task in tasks" :key="task.id" :taskText="task.text" />
+    <Task
+      v-for="task in tasks"
+      :key="task.id"
+      :taskText="task.text"
+      :taskChecked="task.isChecked"
+    />
   </ul>
 </template>
 
@@ -14,7 +19,7 @@ export default {
         {
           text: "Task1",
           id: 1,
-          isChecked: false,
+          isChecked: true,
         },
         {
           text: "Task2",
