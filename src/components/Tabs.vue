@@ -1,6 +1,11 @@
 <template>
   <div class="app-footer__tabs app-tabs">
-    <Tab v-for="tab in tabs" :key="tab.id" :tabText="tab.text" />
+    <Tab
+      v-for="tab in tabs"
+      :key="tab.id"
+      :tabText="tab.text"
+      :tabChecked="tab.isChecked"
+    />
   </div>
 </template>
 
@@ -14,14 +19,17 @@ export default {
         {
           text: "All",
           id: 1,
+          isChecked: true,
         },
         {
           text: "Active",
           id: 2,
+          isChecked: false,
         },
         {
           text: "Completed",
           id: 3,
+          isChecked: false,
         },
       ],
     };

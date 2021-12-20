@@ -4,7 +4,7 @@
       class="app-tabs__input app-tabs__input_one"
       type="radio"
       name="tab"
-      checked
+      :checked="tabChecked"
     />
     <span class="app-tabs__fake">{{ tabText }}</span>
   </label>
@@ -14,6 +14,7 @@
 export default {
   props: {
     tabText: String,
+    tabChecked: Boolean,
   },
 };
 </script>
