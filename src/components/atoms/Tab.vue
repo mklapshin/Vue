@@ -1,40 +1,26 @@
 <template>
-  <footer :class="$style.todoAppFooter">
-    <div :class="$style.appFooterWrapper">
-      <p :class="$style.appFooterCount">1/3 left</p>
-      <Tabs />
-    </div>
-  </footer>
+  <label :class="$style.appTabsLabel">
+    <input
+      :class="$style.appTabsInput"
+      type="radio"
+      name="tab"
+      :checked="tabChecked"
+    />
+    <span :class="$style.appTabsFake">{{ tabText }}</span>
+  </label>
 </template>
 
 <script>
-import Tabs from "./Tabs.vue";
-
 export default {
-  name: "App",
-  components: {
-    Tabs,
+  props: {
+    tabText: String,
+    tabChecked: Boolean,
   },
 };
 </script>
 
 <style lang="scss" module>
-@import "../assets/scss/main.scss";
-
-.appFooterWrapper {
-  padding: 0.75rem 1.875rem;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  background-color: $peachOrange;
-}
-.appFooterCount {
-  margin-right: 1rem;
-  font-size: 1.25rem;
-  line-height: 1.75rem;
-  color: $twineOpacity;
-}
+@import "@/assets/scss/main.scss";
 
 .appTabsLabel {
   cursor: pointer;
@@ -83,11 +69,11 @@ export default {
     content: "";
     position: absolute;
     display: block;
-    width: 5.7rem;
-    margin: 0 0 0 0.3rem;
-    height: 2rem;
-    border-radius: 0.7rem;
-    border: 0.2rem solid $rajah;
+    width: 6.9rem;
+    margin: 0.4rem 0 0 0.1rem;
+    height: 2.42rem;
+    border-radius: 0.65rem;
+    border: 0.125rem solid $carrotOrange;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -102,4 +88,3 @@ export default {
   cursor: pointer;
 }
 </style>
- 

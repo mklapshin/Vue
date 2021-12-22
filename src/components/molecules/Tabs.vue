@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import Tab from "./Tab.vue";
+import Tab from "../atoms/Tab.vue";
 
 export default {
   data() {

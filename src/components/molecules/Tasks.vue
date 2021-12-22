@@ -1,5 +1,5 @@
 <template>
-  <ul class="app-content__tasks">
+  <ul class="appContentTasks">
     <Task
       v-for="task in tasks"
       :key="task.id"
@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import Task from "./Task.vue";
+import Task from "../atoms/Task.vue";
 
 export default {
   data() {
@@ -40,12 +40,10 @@ export default {
 };
 </script>
 
-<style lang="scss">
-@import "../assets/scss/main.scss";
-.app-content {
-  &__tasks {
-    list-style: none;
-    width: 100%;
-  }
+<style lang="scss" module>
+@import "@/assets/scss/main.scss";
+.appContentTasks {
+  list-style: none;
+  width: 100%;
 }
 </style>
