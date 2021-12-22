@@ -1,5 +1,5 @@
 <template>
-  <div class="app-footer__tabs app-tabs">
+  <div :class="$style.appFooterTabs">
     <Tab
       v-for="tab in tabs"
       :key="tab.id"

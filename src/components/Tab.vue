@@ -1,12 +1,12 @@
 <template>
-  <label class="app-tabs__label app-tabs__label_one">
+  <label :class="$style.appTabsLabel">
     <input
-      class="app-tabs__input app-tabs__input_one"
+      :class="$style.appTabsInput"
       type="radio"
       name="tab"
       :checked="tabChecked"
     />
-    <span class="app-tabs__fake">{{ tabText }}</span>
+    <span :class="$style.appTabsFake">{{ tabText }}</span>
   </label>
 </template>
 

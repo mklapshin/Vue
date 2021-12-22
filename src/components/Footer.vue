@@ -1,7 +1,7 @@
 <template>
-  <footer class="todo-app__footer app-footer">
-    <div class="app-footer__wrapper">
-      <p class="app-footer__count">1/3 left</p>
+  <footer :class="$style.todoAppFooter">
+    <div :class="$style.appFooterWrapper">
+      <p :class="$style.appFooterCount">1/3 left</p>
       <Tabs />
     </div>
   </footer>
