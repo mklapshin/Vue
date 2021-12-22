@@ -1,7 +1,7 @@
 <template>
-  <footer :class="$style.todoAppFooter">
-    <div :class="$style.appFooterWrapper">
-      <p :class="$style.appFooterCount">1/3 left</p>
+  <footer :class="$style.footer">
+    <div :class="$style.footerWrapper">
+      <p :class="$style.footerCount">1/3 left</p>
       <Tabs />
     </div>
   </footer>
@@ -21,7 +21,7 @@ export default {
 <style lang="scss" module>
 @import "@/assets/scss/main.scss";
 
-.appFooterWrapper {
+.footerWrapper {
   padding: 0.75rem 1.875rem;
   display: flex;
   flex-wrap: wrap;
@@ -29,14 +29,15 @@ export default {
   align-items: center;
   background-color: $peachOrange;
 }
-.appFooterCount {
+
+.footerCount {
   margin-right: 1rem;
   font-size: 1.25rem;
   line-height: 1.75rem;
   color: $twineOpacity;
 }
 
-.appTabsLabel {
+.tabsLabel {
   cursor: pointer;
   border: 0.125rem solid $peachOrange;
   border-radius: 0.25rem;
@@ -64,11 +65,11 @@ export default {
   }
 }
 
-.appTabsInput {
+.tabsInput {
   display: none;
 }
 
-.appTabsFake {
+.tabsFake {
   cursor: pointer;
   display: inline-block;
   width: 5.3rem;
@@ -97,7 +98,7 @@ export default {
   }
 }
 
-.appTabsInput:checked + .appTabsFake:before {
+.tabsInput:checked + .tabsFake:before {
   opacity: 1;
   cursor: pointer;
 }

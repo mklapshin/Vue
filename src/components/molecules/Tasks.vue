@@ -1,5 +1,5 @@
 <template>
-  <ul class="appContentTasks">
+  <ul class="tasks">
     <Task
       v-for="task in tasks"
       :key="task.id"
@@ -42,7 +42,7 @@ export default {
 
 <style lang="scss" module>
 @import "@/assets/scss/main.scss";
-.appContentTasks {
+.tasks {
   list-style: none;
   width: 100%;
 }

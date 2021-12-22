@@ -1,16 +1,16 @@
 <template>
-  <header :class="$style.todoAppHeader">
-    <p :class="$style.todoAppTitle">to do list</p>
+  <header :class="$style.header">
+    <p :class="$style.title">to do list</p>
   </header>
 </template>
 
 <style lang="scss" module>
 @import "@/assets/scss/main.scss";
-.todoAppHeader {
+.header {
   background-color: $peachOrange;
 }
 
-.todoAppTitle {
+.title {
   padding: 0.75rem 0;
   display: flex;
   text-align: center;

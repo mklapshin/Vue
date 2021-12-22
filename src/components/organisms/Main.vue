@@ -1,9 +1,9 @@
 <template>
-  <main :class="$style.appContent">
-    <div :class="$style.appContentWrapper">
+  <main :class="$style.content">
+    <div :class="$style.contentWrapper">
       <Tasks />
       <input
-        :class="$style.appContentAddTask"
+        :class="$style.contentAdd"
         type="text"
         placeholder="Add a new task"
       />
@@ -24,16 +24,16 @@ export default {
 
 <style lang="scss" module>
 @import "@/assets/scss/main.scss";
-.appContent {
+.content {
   padding: 1.875rem 0;
   background-color: $linen;
 }
 
-.appContentWrapper {
+.contentWrapper {
   padding: 0 1.875rem;
 }
 
-.appContentAddTask {
+.contentAdd {
   padding: 0.75rem 1rem;
   width: 100%;
   outline: none;

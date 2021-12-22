@@ -1,12 +1,12 @@
 <template>
-  <label :class="$style.appTabsLabel">
+  <label :class="$style.tabsLabel">
     <input
-      :class="$style.appTabsInput"
+      :class="$style.tabsInput"
       type="radio"
       name="tab"
       :checked="tabChecked"
     />
-    <span :class="$style.appTabsFake">{{ tabText }}</span>
+    <span :class="$style.tabsFake">{{ tabText }}</span>
   </label>
 </template>
 
@@ -22,7 +22,7 @@ export default {
 <style lang="scss" module>
 @import "@/assets/scss/main.scss";
 
-.appTabsLabel {
+.tabsLabel {
   cursor: pointer;
   border: 0.125rem solid $peachOrange;
   border-radius: 0.25rem;
@@ -50,11 +50,11 @@ export default {
   }
 }
 
-.appTabsInput {
+.tabsInput {
   display: none;
 }
 
-.appTabsFake {
+.tabsFake {
   cursor: pointer;
   display: inline-block;
   width: 5.3rem;
@@ -83,7 +83,7 @@ export default {
   }
 }
 
-.appTabsInput:checked + .appTabsFake:before {
+.tabsInput:checked + .tabsFake:before {
   opacity: 1;
   cursor: pointer;
 }
