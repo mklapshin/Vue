@@ -69,11 +69,11 @@ export default {
     content: "";
     position: absolute;
     display: block;
-    width: 5.7rem;
-    margin: 0 0 0 0.3rem;
-    height: 2rem;
-    border-radius: 0.7rem;
-    border: 0.2rem solid $rajah;
+    width: 6.9rem;
+    margin: 0.4rem 0 0 0.1rem;
+    height: 2.42rem;
+    border-radius: 0.65rem;
+    border: 0.125rem solid $carrotOrange;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
