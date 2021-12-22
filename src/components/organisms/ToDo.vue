@@ -1,7 +1,7 @@
 <template>
-  <div :class="$style.pageContainer">
-    <div :class="$style.pageWrapper">
-      <div :class="$style.todoApp">
+  <div :class="$style.container">
+    <div :class="$style.wrapper">
+      <div :class="$style.app">
         <Header />
         <Main />
         <Footer />
@@ -27,11 +27,12 @@ export default {
 
 <style lang="scss" module>
 @import "@/assets/scss/main.scss";
-.pageContainer {
+.container {
   background: linear-gradient(104.11deg, $rajah 14.52%, $colar 87.26%);
 }
 
-.pageWrapper {
+.wrapper {
+  background: linear-gradient(104.11deg, $rajah 14.52%, $colar 87.26%);
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -42,7 +43,7 @@ export default {
   }
 }
 
-.todoApp {
+.app {
   max-width: 33.75rem;
 }
 </style>

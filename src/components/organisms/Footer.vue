@@ -65,11 +65,11 @@ export default {
   }
 }
 
-.tabsInput {
+.input {
   display: none;
 }
 
-.tabsFake {
+.fake {
   cursor: pointer;
   display: inline-block;
   width: 5.3rem;
@@ -98,7 +98,7 @@ export default {
   }
 }
 
-.tabsInput:checked + .tabsFake:before {
+.input:checked + .fake:before {
   opacity: 1;
   cursor: pointer;
 }

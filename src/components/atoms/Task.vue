@@ -1,11 +1,11 @@
 <template>
   <li :class="$style.task">
-    <label :class="$style.taskLabel">
-      <input type="checkbox" :class="$style.taskInput" :checked="taskChecked" />
-      <span :class="$style.taskFake"></span>
-      <div :class="$style.taskText">{{ taskText }}</div>
+    <label :class="$style.label">
+      <input type="checkbox" :class="$style.input" :checked="taskChecked" />
+      <span :class="$style.fake"></span>
+      <div :class="$style.text">{{ taskText }}</div>
     </label>
-    <button :class="$style.taskBtn" aria-label="remove-task"></button>
+    <button :class="$style.btn" aria-label="remove-task"></button>
   </li>
 </template>
 
@@ -29,11 +29,11 @@ export default {
   border-radius: 0.625rem;
 }
 
-.taskInput {
+.input {
   display: none;
 }
 
-.taskFake {
+.fake {
   flex: 0 0 1.5rem;
   cursor: pointer;
   display: inline-block;
@@ -61,22 +61,22 @@ export default {
   }
 }
 
-.taskInput:checked + .taskFake::before {
+.input:checked + .fake::before {
   opacity: 1;
   cursor: pointer;
 }
 
-.taskLabel {
+.label {
   flex: 1 1 auto;
   display: flex;
   align-items: center;
 }
 
-.taskText {
+.text {
   margin: 0 0 0 24px;
 }
 
-.taskBtn {
+.btn {
   flex: 0 0 1.5rem;
   cursor: pointer;
   margin: 0 0 0 50px;
