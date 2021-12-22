@@ -1,7 +1,11 @@
 <template>
   <main :class="$style.content">
     <Tasks />
-    <input :class="$style.add" type="text" placeholder="Add a new task" />
+    <input
+      :class="$style.contentAdd"
+      type="text"
+      placeholder="Add a new task"
+    />
   </main>
 </template>
 
@@ -23,7 +27,7 @@ export default {
   background-color: $linen;
 }
 
-.add {
+.contentAdd {
   padding: 0.75rem 1rem;
   width: 100%;
   outline: none;

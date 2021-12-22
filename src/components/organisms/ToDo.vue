@@ -32,7 +32,6 @@ export default {
 }
 
 .wrapper {
-  background: linear-gradient(104.11deg, $rajah 14.52%, $colar 87.26%);
   height: 100vh;
   display: flex;
   justify-content: center;
