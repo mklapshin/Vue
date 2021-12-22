@@ -32,6 +32,8 @@ export default {
 }
 
 .wrapper {
+  margin: 0 auto;
+  max-width: 65rem;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -43,6 +45,6 @@ export default {
 }
 
 .app {
-  max-width: 33.75rem;
+  max-width: 27.75rem;
 }
 </style>
