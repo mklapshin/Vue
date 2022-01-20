@@ -8,7 +8,6 @@
     />
     <span :class="$style.fake">{{ tabText }}</span>
   </label>
-  <div>{{ $store.getters.getText }}</div>
 </template>
 
 <script>
