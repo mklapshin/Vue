@@ -2,17 +2,17 @@ export default {
   state: {
     tasks: [
       {
-        text: "Task1",
+        title: "Task1",
         id: 1,
         isChecked: true,
       },
       {
-        text: "Task2",
+        title: "Task2",
         id: 2,
         isChecked: false,
       },
       {
-        text: "Task3",
+        title: "Task3",
         id: 3,
         isChecked: false,
       },
@@ -67,10 +67,13 @@ export default {
 
   },
   mutations: {
-    addTask(state, titleTask) {
+
+
+
+    addTask(state, text) {
       state.tasks.push({
         id: 4,
-        title: titleTask,
+        title: text,
         isCompleted: false,
       });
     },

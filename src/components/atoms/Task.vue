@@ -5,15 +5,27 @@
       <span :class="$style.fake"></span>
       <div :class="$style.text">{{ taskText }}</div>
     </label>
-    <button :class="$style.btn" aria-label="remove-task"></button>
+    <button
+      :class="$style.btn"
+      aria-label="remove-task"
+      @click="deleteTask"
+    ></button>
   </li>
 </template>
 
 <script>
+import { mapMutations } from "vuex";
 export default {
   props: {
     taskText: String,
     taskChecked: Boolean,
+    id: String,
+  },
+  methods: {
+    ...mapMutations(["removeTask"]),
+    deleteTask() {
+      this.removeTask(this.id);
+    },
   },
 };
 </script>

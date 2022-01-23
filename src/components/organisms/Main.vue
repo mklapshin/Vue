@@ -1,19 +1,33 @@
 <template>
-  <main :class="$style.content">
+  <form :class="$style.content" @submit.prevent="submit">
     <Tasks />
     <input
       :class="$style.contentAdd"
       type="text"
       placeholder="Add a new task"
+      v-model="text"
     />
-  </main>
+  </form>
 </template>
 
 <script>
 import Tasks from "../molecules/Tasks.vue";
+import { mapMutations } from "vuex";
 
 export default {
   name: "App",
+  data() {
+    return {
+      text: "",
+    };
+  },
+  methods: {
+    ...mapMutations(["addTask"]),
+    submit() {
+      this.addTask(this.text);
+      this.text = "";
+    },
+  },
   components: {
     Tasks,
   },

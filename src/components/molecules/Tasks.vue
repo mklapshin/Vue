@@ -1,9 +1,9 @@
 <template>
-  <ul class="tasks">
+  <ul class="tasks" v-if="getTasksFiltered.length != 0">
     <Task
       v-for="task in getTasksFiltered"
       :key="task.id"
-      :taskText="task.text"
+      :taskText="task.title"
       :id="task.id"
       :taskChecked="task.isChecked"
     />
@@ -12,11 +12,13 @@
 
 <script>
 import Task from "../atoms/Task.vue";
+import { mapMutations } from "vuex";
 
 import { mapGetters } from "vuex";
 export default {
   components: { Task },
   computed: mapGetters(["getTasksFiltered"]),
+  ...mapMutations(["removeTask"]),
 };
 </script>
 
