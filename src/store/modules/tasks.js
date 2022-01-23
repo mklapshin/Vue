@@ -69,7 +69,7 @@ export default {
   mutations: {
     addTask(state, titleTask) {
       state.tasks.push({
-        id: 4(),
+        id: 4,
         title: titleTask,
         isCompleted: false,
       });
