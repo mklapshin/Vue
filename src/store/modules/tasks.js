@@ -1,19 +1,21 @@
+import { v4 as uuidv4 } from 'uuid';
+
 export default {
   state: {
     tasks: [
       {
         title: "Task1",
-        id: 1,
+        id: uuidv4(),
         isChecked: true,
       },
       {
         title: "Task2",
-        id: 2,
+        id: uuidv4(),
         isChecked: false,
       },
       {
         title: "Task3",
-        id: 3,
+        id: uuidv4(),
         isChecked: false,
       },
     ],
@@ -51,14 +53,14 @@ export default {
       if (state.filter == 'All') {
         return state.tasks;
       } else if (state.filter == 'Active') {
-        return state.tasks.filter(task => !task.isCompleted);
+        return state.tasks.filter(task => !task.isChecked);
       } else if (state.filter == 'Completed') {
-        return state.tasks.filter(task => task.isCompleted);
+        return state.tasks.filter(task => task.isChecked);
       }
       return state.tasks;
     },
     getCompleted(state) {
-      return state.tasks.filter(task => task.isCompleted).length;
+      return state.tasks.filter(task => task.isChecked).length;
     },
     getTabs(state) {
       return state.tabs;
@@ -68,13 +70,11 @@ export default {
   },
   mutations: {
 
-
-
     addTask(state, text) {
       state.tasks.push({
-        id: 4,
+        id: uuidv4(),
         title: text,
-        isCompleted: false,
+        isChecked: false,
       });
     },
     removeTask(state, id) {
@@ -83,7 +83,7 @@ export default {
     changeCompleted(state, id) {
       state.tasks.forEach(task => {
         if (task.id === id) {
-          task.isCompleted = !task.isCompleted;
+          task.isChecked = !task.isChecked;
         }
       });
     },

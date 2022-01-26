@@ -13,12 +13,12 @@
 <script>
 import Task from "../atoms/Task.vue";
 import { mapMutations } from "vuex";
-
 import { mapGetters } from "vuex";
+
 export default {
   components: { Task },
+  methods: mapMutations(["addTask"]),
   computed: mapGetters(["getTasksFiltered"]),
-  ...mapMutations(["removeTask"]),
 };
 </script>
 

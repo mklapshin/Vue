@@ -1,7 +1,12 @@
 <template>
   <li :class="$style.task">
     <label :class="$style.label">
-      <input type="checkbox" :class="$style.input" :checked="taskChecked" />
+      <input
+        type="checkbox"
+        :class="$style.input"
+        :checked="taskChecked"
+        @change="isChecked"
+      />
       <span :class="$style.fake"></span>
       <div :class="$style.text">{{ taskText }}</div>
     </label>
@@ -22,9 +27,12 @@ export default {
     id: String,
   },
   methods: {
-    ...mapMutations(["removeTask"]),
+    ...mapMutations(["removeTask", "changeCompleted"]),
     deleteTask() {
       this.removeTask(this.id);
+    },
+    isChecked() {
+      this.changeCompleted(this.id);
     },
   },
 };

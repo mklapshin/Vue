@@ -1,13 +1,15 @@
 <template>
-  <form :class="$style.content" @submit.prevent="submit">
+  <div :class="$style.content">
     <Tasks />
-    <input
-      :class="$style.contentAdd"
-      type="text"
-      placeholder="Add a new task"
-      v-model="text"
-    />
-  </form>
+    <form @submit.prevent="submit">
+      <input
+        :class="$style.contentAdd"
+        type="text"
+        placeholder="Add a new task"
+        v-model="text"
+      />
+    </form>
+  </div>
 </template>
 
 <script>
