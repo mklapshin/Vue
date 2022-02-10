@@ -24,6 +24,10 @@ export default {
     Main,
     Footer,
   },
+
+  mounted() {
+    this.$store.dispatch("checkLocalStorage");
+  },
 };
 </script>
 

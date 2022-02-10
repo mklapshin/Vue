@@ -98,8 +98,17 @@ export default {
         }
       })
     },
+    checkLocalStorage(state) {
+      state.tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+    }
   },
   actions: {
+
+
+    checkLocalStorage(context) {
+      context.commit("checkLocalStorage");
+    },
+
 
   },
 };
