@@ -68,8 +68,6 @@ export default {
 
   },
   mutations: {
-
-
     addTask(state, text) {
       state.tasks.push({
         id: uuidv4(),
@@ -92,7 +90,6 @@ export default {
     },
     filterTasks(state, tabTitle) {
       state.filter = tabTitle;
-      localStorage.setItem("tasks", JSON.stringify(state.tasks));
     },
     changeTabText(state, text) {
       state.tabs.map((tab) => {
@@ -100,7 +97,6 @@ export default {
           state.tabStatus = tab.tabTitle;
         }
       })
-      localStorage.setItem("tasks", JSON.stringify(state.tasks));
     },
   },
   actions: {
