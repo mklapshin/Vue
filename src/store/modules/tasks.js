@@ -76,9 +76,11 @@ export default {
         title: text,
         isChecked: false,
       });
+      localStorage.setItem("tasks", JSON.stringify(state.tasks));
     },
     removeTask(state, id) {
       state.tasks = state.tasks.filter(task => task.id !== id);
+      localStorage.setItem("tasks", JSON.stringify(state.tasks));
     },
     changeCompleted(state, id) {
       state.tasks.forEach(task => {
@@ -86,9 +88,11 @@ export default {
           task.isChecked = !task.isChecked;
         }
       });
+      localStorage.setItem("tasks", JSON.stringify(state.tasks));
     },
     filterTasks(state, tabTitle) {
       state.filter = tabTitle;
+      localStorage.setItem("tasks", JSON.stringify(state.tasks));
     },
     changeTabText(state, text) {
       state.tabs.map((tab) => {
@@ -96,7 +100,10 @@ export default {
           state.tabStatus = tab.tabTitle;
         }
       })
+      localStorage.setItem("tasks", JSON.stringify(state.tasks));
     },
   },
-  actions: {},
+  actions: {
+
+  },
 };
