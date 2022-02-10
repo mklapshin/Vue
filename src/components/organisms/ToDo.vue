@@ -5,6 +5,8 @@
         <Header />
         <Main />
         <Footer />
+        <div>{{ $store.getters.getText }}</div>
+        <div>{{ $store.getters.getTasks1 }}</div>
       </div>
     </div>
   </div>
