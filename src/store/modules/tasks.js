@@ -68,17 +68,17 @@ export default {
 
   },
   mutations: {
-
-
     addTask(state, text) {
       state.tasks.push({
         id: uuidv4(),
         title: text,
         isChecked: false,
       });
+      localStorage.setItem("tasks", JSON.stringify(state.tasks));
     },
     removeTask(state, id) {
       state.tasks = state.tasks.filter(task => task.id !== id);
+      localStorage.setItem("tasks", JSON.stringify(state.tasks));
     },
     changeCompleted(state, id) {
       state.tasks.forEach(task => {
@@ -86,6 +86,7 @@ export default {
           task.isChecked = !task.isChecked;
         }
       });
+      localStorage.setItem("tasks", JSON.stringify(state.tasks));
     },
     filterTasks(state, tabTitle) {
       state.filter = tabTitle;
@@ -97,6 +98,17 @@ export default {
         }
       })
     },
+    checkLocalStorage(state) {
+      state.tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+    }
   },
-  actions: {},
+  actions: {
+
+
+    checkLocalStorage(context) {
+      context.commit("checkLocalStorage");
+    },
+
+
+  },
 };
